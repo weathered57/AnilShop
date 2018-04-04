@@ -15,7 +15,7 @@ namespace WebAnilShop.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description pag.";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
