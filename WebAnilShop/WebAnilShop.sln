@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Web", "WebAnilShop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Entities", "AnilShop.Entity\AnilShop.Entities.csproj", "{A7965C57-A4A5-4B40-9CBF-4272B88AD582}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Core", "AnilShop.Core\AnilShop.Core.csproj", "{0CCEE7FF-F4C4-4B3A-8B6B-A338FF9FF9EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A7965C57-A4A5-4B40-9CBF-4272B88AD582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7965C57-A4A5-4B40-9CBF-4272B88AD582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7965C57-A4A5-4B40-9CBF-4272B88AD582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CCEE7FF-F4C4-4B3A-8B6B-A338FF9FF9EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCEE7FF-F4C4-4B3A-8B6B-A338FF9FF9EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCEE7FF-F4C4-4B3A-8B6B-A338FF9FF9EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCEE7FF-F4C4-4B3A-8B6B-A338FF9FF9EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
