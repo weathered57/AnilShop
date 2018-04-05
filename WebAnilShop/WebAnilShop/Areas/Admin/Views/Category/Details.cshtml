@@ -1,0 +1,37 @@
+﻿@model AnilShop.Entities.Kategori
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Kategori Detayları</h2>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.KategoriAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.KategoriAdi)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        @Html.ActionLink("Düzenle", "Index", "Urun", new { id = Model.ID }, htmlAttributes: new { @class = "btn btn-success" })
+        @Html.ActionLink("Geriye Git ", "Index", "Urun", htmlAttributes: new { @class = "btn btn-info" })
+    </div>
+
+</div>

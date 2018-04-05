@@ -1,31 +1,323 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using AnilShop.Entities
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+    .thumbnail {
+        width: 290px;
+    }
+
+    .ortala {
+        margin-bottom: auto;
+        text-align: center;
+    }
+
+    .section-title {
+        font-family: "Raleway",sans-serif;
+        font-size: 50px;
+        font-weight: 100;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+</style>
+<div class="slider-area">
+    <!-- Slider -->
+    <div class="block-slider block-slider4">
+        <ul class="" id="bxslider-home4">
+            <li>
+                <img src="~/img/h4-slide4.png" />
+                <div class="caption-group">
+                    <h2 class="caption title">
+                        iPhone <span class="primary">6 <strong>Plus</strong></span>
+                    </h2>
+                    <h4 class="caption subtitle">Dual SIM</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                </div>
+            </li>
+            <li>
+
+                <img src="~/img/h4-slide2.png" />
+                <div class="caption-group">
+                    <h2 class="caption title">
+                        by one, get one <span class="primary">50% <strong>off</strong></span>
+                    </h2>
+                    <h4 class="caption subtitle">school supplies & backpacks.*</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                </div>
+            </li>
+            <li>
+
+                <img src="~/img/h4-slide3.png" />
+                <div class="caption-group">
+                    <h2 class="caption title">
+                        Apple <span class="primary">Store <strong>Ipod</strong></span>
+                    </h2>
+                    <h4 class="caption subtitle">Select Item</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                </div>
+            </li>
+            <li>
+                <img src="~/img/h4-slide7.png" />
+                <div class="caption-group">
+                    <h2 class="caption title">
+                        Apple <span class="primary">Store <strong>Ipod</strong></span>
+                    </h2>
+                    <h4 class="caption subtitle">& Phone</h4>
+                    <a class="caption button-radius" href="#"><span class="icon"></span>Shop now</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- ./Slider --><!-- End slider area -->
+
+<div class="promo-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo1">
+                    <i class="fa fa-refresh"></i>
+                    <p>30 Days return</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo2">
+                    <i class="fa fa-truck"></i>
+                    <p>Free shipping</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo3">
+                    <i class="fa fa-lock"></i>
+                    <p>Secure payments</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo promo4">
+                    <i class="fa fa-gift"></i>
+                    <p>New products</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- End promo area -->
+
+<div class="container">
+    <h2 class="section-title">Yeni Ürünler</h2>
+    <div class="row">
+        @foreach (var urun in Model)
+        {
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+
+                            <a href="/Home/UrunDetayi/@urun.ID"><img src="~/img/@urun.urunImage" /></a>
+                            <div class="caption">
+                                <h3 class="ortala">@urun.UrunAdi</h3>   <br />
+                                <p class="ortala">
+
+                                    @Html.ActionLink("Sepete Ekle", "SepeteEkle", "Sepet", new { id = urun.ID }, new { @class = "btn btn-primary" })
+                                    @Html.ActionLink("Detay", "UrunDetayi", "Home", new { id = urun.ID }, new { @class = "btn btn-info" })
+
+                                </p>
+                            </div>
+                            <div class="product-carousel-price ortala">
+                                <ins>@urun.fiyat ₺</ins>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+
+                <img src="~/img/brand1.png" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+
+
+                <img src="~/img/brand2.png" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+
+
+                <img src="~/img/brand3.png" />
+            </a>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+
+
+                <img src="~/img/brand4.png" />
+            </a>
+        </div>
+
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="product-widget-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="single-product-widget">
+                    <h2 class="product-wid-title">Top Sellers</h2>
+                    <a href="" class="wid-view-more">View All</a>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Apple new mac book 2015</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Apple new i phone 6</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-product-widget">
+                    <h2 class="product-wid-title">Recently Viewed</h2>
+                    <a href="#" class="wid-view-more">View All</a>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-product-widget">
+                    <h2 class="product-wid-title">Top New</h2>
+                    <a href="#" class="wid-view-more">View All</a>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Apple new i phone 6</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                    <div class="single-wid-product">
+                        <a href="single-product.html"><img src="~/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
+                        <h2><a href="single-product.html">Sony playstation microsoft</a></h2>
+                        <div class="product-wid-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product-wid-price">
+                            <ins>$400.00</ins> <del>$425.00</del>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</div> <!-- End product widget area -->

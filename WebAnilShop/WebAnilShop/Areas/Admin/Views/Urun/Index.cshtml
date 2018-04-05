@@ -1,0 +1,86 @@
+﻿@model IEnumerable<AnilShop.Entities.Urun>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <p>
+            <a href="/Admin/Urun/Create"><button class="btn btn-success" type="button">Ürün Ekle</button></a>
+        </p>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UrunAdi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UrunAcıklamasi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.kategori.KategoriAdi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.fiyat)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EklenmeTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DuzenlemeTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.kampanya)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.urunImage)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UrunAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UrunAcıklamasi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.kategori.KategoriAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.fiyat)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DuzenlemeTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.kampanya.kampanyaAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.urunImage)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Yorumlar", "Index", "Yorum", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-success btn-xs" })
+                            @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-warning btn-xs" })
+                            @Html.ActionLink("Detaylar", "Details", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-info btn-xs" })
+                            @Html.ActionLink("Sil", "Delete", new { id = item.ID }, htmlAttributes: new { @class = "btn btn-danger btn-xs" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+    </div>
+

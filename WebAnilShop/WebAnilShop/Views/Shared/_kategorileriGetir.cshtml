@@ -1,0 +1,15 @@
+﻿@using AnilShop.Entities
+@{
+    AnilShop.BusinessLayer.KategoriManager cat = new AnilShop.BusinessLayer.KategoriManager();
+    List<Kategori> kategoriler = cat.List();
+}
+
+<div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action">@Html.ActionLink("Tüm Ürünler", "KategorilerSayfasi", "Home")</button>
+    @foreach (var item in kategoriler)
+    {
+        <button type="button" class="list-group-item list-group-item-action"><a href="/Home/KategorilerSayfasi/@item.ID">@item.KategoriAdi</a></button>
+    }
+
+</div>
+

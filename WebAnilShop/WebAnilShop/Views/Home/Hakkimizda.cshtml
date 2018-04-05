@@ -1,0 +1,41 @@
+﻿@using AnilShop.Entities
+@model Hakkimizda
+@{
+    ViewBag.Title = "Hakkimizda";
+}
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Hakkımızda</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <!-- Kategoriler -->
+        <div class="col-md-8 col-md-offset-2">
+
+            <div class="row">
+                <h2 class="text-center">
+                    @Model.Baslik
+                </h2>
+                <hr />
+                <img src="http://placehold.it/500x200" class="center-block img-responsive img-rounded img-thumbnail" alt="Alternate Text" />
+                <hr />
+                @Model.aciklama
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function ()
+    {
+        $("#footer,#footer1").hide();
+    })
+</script>

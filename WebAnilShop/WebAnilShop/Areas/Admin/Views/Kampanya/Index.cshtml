@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AnilShop.Entities.Kampanya>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h2>Kampanyalar</h2>
+        <hr />
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-12">
+        <p>
+            @Html.ActionLink("Kampanya Ekle", "Create", "Kampanya", htmlAttributes: new { @class = "btn btn-success" })
+        </p>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.kampanyaAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.kampanyaYuzdesi)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.kampanyaAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.kampanyaYuzdesi)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detaylar", "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+</div>

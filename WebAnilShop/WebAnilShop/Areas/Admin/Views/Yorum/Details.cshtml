@@ -1,0 +1,55 @@
+﻿@model AnilShop.Entities.Yorum
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Yorum Detayları</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <h4>Yorum</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.aciklama)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.aciklama)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.isAktif)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.isAktif)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EklenmeTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EklenmeTarihi)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.DuzenlemeTarihi)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DuzenlemeTarihi)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", null, new { id = @Model.ID }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Geriye Git ", "Index", "Yorum", htmlAttributes: new { @class = "btn btn-info" })
+        </p>
+
+    </div>
+
+</div>

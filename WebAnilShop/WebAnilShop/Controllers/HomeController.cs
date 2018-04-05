@@ -1,10 +1,16 @@
-﻿using System;
+﻿using AnilShop.BusinessLayer;
+using AnilShop.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AnilShop.Web;
+using AnilShop.Entities.ViewsModel;
+using AnilShop.BusinessLayer.Result;
+using AnilShop.BusinessLayer.Messages;
 
-namespace WebAnilShop.Controllers
+namespace AnilShop.Web.Controllers
 {
     public class HomeController : Controller
     {

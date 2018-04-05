@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AnilShop.Entities.Kategori>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+
+    <div class="col-md-10 col-md-offset-1">
+        <h2>Kategoriler</h2>
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 ">
+
+        <p>
+            @Html.ActionLink("Kategori Ekle", "Create", "Category", htmlAttributes: new { @class = "btn btn-success" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.KategoriAdi)
+                </th>
+                <th>
+                    @Html.DisplayName("Ürün Sayısı")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KategoriAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Urunler.Count)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Ürünleri Göster", "Index", "Urun", new { id = item.ID }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detaylar", "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</div>
+

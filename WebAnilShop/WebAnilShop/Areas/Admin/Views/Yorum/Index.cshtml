@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AnilShop.Entities.Yorum>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.aciklama)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.urun.UrunAdi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.isAktif)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EklenmeTarihi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DuzenlemeTarihi)
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.aciklama)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.urun.UrunAdi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isAktif)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EklenmeTarihi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DuzenlemeTarihi)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                        @Html.ActionLink("Detaylar", "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Sil", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+    </div>
+</div>

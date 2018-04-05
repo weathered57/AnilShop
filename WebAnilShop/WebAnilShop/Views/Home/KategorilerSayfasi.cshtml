@@ -1,0 +1,52 @@
+﻿@using AnilShop.Entities
+@model List<Urun>
+@{
+    ViewBag.Title = "KategorilerSayfasi";
+}
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>Kategoriler</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="single-product-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Partial("_kategorileriGetir")
+            </div>
+            <div class="col-md-10">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3">
+                        <div class="single-shop-product">
+                            <div class="product-upper">
+                                <a href="/Home/UrunDetayi/@item.ID"><img src="~/img/@item.urunImage" /></a>
+                            </div>
+                            <h2><a href="/Home/UrunDetayi/@item.ID">@item.UrunAdi</a></h2>
+
+                            <div class="product-carousel-price">
+                                <ins>@item.fiyat ₺</ins><del>@item.fiyat t</del>
+                            </div>
+
+                            <div class="product-option-shop">
+
+                                @Html.ActionLink("Sepete Ekle", "Ekle", "Sepet", new { id = @item.ID }, new { @class = "add_to_cart_button" })
+                                @Html.ActionLink("Detay", "UrunDetayi", "Home", new { id = @item.ID }, new { @class = "btn btn-info" })
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
