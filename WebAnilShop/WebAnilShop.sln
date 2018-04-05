@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Web", "WebAnilShop\AnilShop.Web.csproj", "{B67DCD8F-441E-409E-9508-986EA7D98A50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Entities", "AnilShop.Entities\AnilShop.Entities.csproj", "{B4B7C9DB-3FE0-427C-BBF3-391BDDDC2EB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B67DCD8F-441E-409E-9508-986EA7D98A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B67DCD8F-441E-409E-9508-986EA7D98A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B67DCD8F-441E-409E-9508-986EA7D98A50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B7C9DB-3FE0-427C-BBF3-391BDDDC2EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B7C9DB-3FE0-427C-BBF3-391BDDDC2EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B7C9DB-3FE0-427C-BBF3-391BDDDC2EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B7C9DB-3FE0-427C-BBF3-391BDDDC2EB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
