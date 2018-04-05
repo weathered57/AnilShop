@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Web", "WebAnilShop\AnilShop.Web.csproj", "{B67DCD8F-441E-409E-9508-986EA7D98A50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Entity", "AnilShop.Entity\AnilShop.Entity.csproj", "{A7965C57-A4A5-4B40-9CBF-4272B88AD582}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnilShop.Entities", "AnilShop.Entity\AnilShop.Entities.csproj", "{A7965C57-A4A5-4B40-9CBF-4272B88AD582}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
